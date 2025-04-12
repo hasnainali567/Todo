@@ -77,6 +77,8 @@ function createTask(inputVal) {
     tasks.appendChild(task);
     let taskCount = tasks.querySelectorAll("div").length;
 
+    
     countP.textContent = `You have ${taskCount} remaining tasks`;
+    tasks.scrollTop = tasks.scrollHeight;
   }
 }
