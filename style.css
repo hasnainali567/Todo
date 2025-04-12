@@ -85,7 +85,8 @@ main {
 }
 
 .task {
-    min-height: 44px;
+  position: relative !important;
+   min-height: 44px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -93,7 +94,6 @@ main {
   font-size: 1.2rem;
   background-color: rgba(214, 214, 214, 0.712);
   border-radius: 4px;
-  overflow: hidden;
 }
 
 .task > i {
@@ -115,7 +115,7 @@ main {
 .toggle > i:last-child {
     background-color: red !important;
 }
-
+ 
 .task > p {
   flex-grow: 1;
 }
@@ -142,3 +142,44 @@ main {
     cursor: pointer;
 }
 
+#edit {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  display: none;
+  /* border: 2px solid rgb(179, 179, 179); */
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 1rem;
+  z-index: 99;
+}
+
+#edit > input {
+  font-size: 1rem;
+  padding: 5px 12px;
+  outline: none;
+  border: none;
+  border-top: 3px solid rgb(180, 180, 180);
+  border-bottom: 3px solid rgb(180, 180, 180);
+  border-left: 3px solid rgb(180, 180, 180);
+}
+
+
+#edit > button {
+  background-color: red;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#edit > button:last-child {
+  background-color: #8e49e8;
+}
+
+
+.dflex {
+  display: flex !important;
+}

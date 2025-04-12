@@ -4,9 +4,12 @@ let tasks = document.getElementById("tasks");
 let tasksCount = document.getElementById("tasksCount");
 let countP = document.getElementById("countP");
 
-let editBtns = `<i id="editBtn" class="fa-solid fa-pen"></i>
+let editBtns = `<i onclick="editTaskVal(event)" id="editBtn" class="fa-solid fa-pen"></i>
                 <i onclick="deleteElem(event)" id="deleteBtn" class="fa-solid fa-trash"></i>`;
-
+let editVal = `<div id="edit">
+                    <input type="text" name="" id="editVal">
+                    <button onclick="dnoneEdit(event)">Cancel</button>
+                    <button onclick="updateTask(event)">Update</button>`
 let attribute = {
   onmouseenter: "toggleClass(event, 'enter')",
   onmouseleave: "toggleClass(event, 'leave')",
@@ -68,10 +71,12 @@ function createTask(inputVal) {
 //   console.log(task);
 
   let taskP = document.createElement("p");
+  taskP.setAttribute('id', 'taskP');
   taskP.textContent = inputVal;
 
   task.appendChild(taskP);
   task.innerHTML += editBtns;
+  task.innerHTML += editVal
 
   if (inputVal) {
     tasks.appendChild(task);
@@ -81,4 +86,35 @@ function createTask(inputVal) {
     countP.textContent = `You have ${taskCount} remaining tasks`;
     tasks.scrollTop = tasks.scrollHeight;
   }
+}
+
+
+function editTaskVal(event) {
+  let clss = event.target.parentElement;
+  
+  clss = clss.querySelector('#edit');
+  clss.classList.add('dflex');
+  
+}
+
+
+function dnoneEdit(event) {
+  let clss = event.target.parentElement;
+  clss.classList.remove('dflex');
+  
+}
+
+function updateTask(event){
+let task = event.target.parentElement;
+let editVal = task.querySelector('#editVal');
+
+let taskP = task.parentElement;
+if (editVal.value) {
+  taskP.querySelector('#taskP').textContent = editVal.value;
+dnoneEdit(event);
+editVal.placeholder = ''
+editVal.value = '';
+} else {
+  editVal.placeholder = 'Plz Enter your task here'
+}
 }
