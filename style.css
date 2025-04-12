@@ -46,7 +46,7 @@ header > h2 {
   padding: 8px;
   padding-inline: 12px;
   font-size: 1.3rem;
-  width: calc(100% - (12.5px + 1.8rem);
+  width: 80%;
   border: 2px solid rgb(178, 178, 178);
   border-radius: 3px;
   outline: none;
@@ -57,6 +57,7 @@ header > h2 {
 }
 
 #input > i {
+  width: 20%;
   color: white;
   background-color: #8e49e8;
   font-size: 1.8rem;
