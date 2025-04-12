@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+  color: #333;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #6ee7b7, #3b82f6);
+}
+
+#main {
+  min-height: 550px;
+  max-height: 550px;
+  min-width: 450px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+header > h2 {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+#input {
+    min-height: 50.4px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+#inputDisplay {
+  padding: 8px;
+  padding-inline: 12px;
+  font-size: 1.3rem;
+  flex-grow: 1;
+  border: 2px solid rgb(178, 178, 178);
+  border-radius: 3px;
+  outline: none;
+}
+
+#inputDisplay::placeholder {
+  color: rgb(177, 177, 177);
+}
+
+#input > i {
+  color: white;
+  background-color: #8e49e8;
+  font-size: 1.8rem;
+  padding: 10.5px;
+  padding-inline: 12.5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+main {
+    height: 483px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #6ee7b7; */
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#tasks {
+    height: 312px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto !important;
+  scrollbar-width: none;
+}
+
+.task {
+    min-height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-size: 1.2rem;
+  background-color: rgba(214, 214, 214, 0.712);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.task > i {
+    font-size: 1.5rem;
+    height: 100%;
+    padding: 10px;
+    padding-inline: 12px;
+    color: transparent;
+    background-color: transparent;
+    transition: .2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+
+.toggle > i{
+    background-color: #8e49e8 !important;
+    color: white;
+    cursor: pointer;
+}
+
+.toggle > i:last-child {
+    background-color: red !important;
+}
+
+.task > p {
+  flex-grow: 1;
+}
+
+#tasksCount {
+    min-height: 59px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  /* padding: 8px; */
+  padding-top: 15px;
+  font-size: 1.1rem;
+}
+
+#tasksCount > button {
+    font-size: 1.1rem;
+    padding: 5px;
+    padding-inline: 15px;
+    background-color: #8e49e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
