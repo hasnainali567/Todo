@@ -35,11 +35,18 @@ inputDisplay.onkeydown = (key) => {
 
 function toggleClass(event, type) {
   let elem = event.target;
+  elem = elem.querySelector('#editBtn');
+  let elem2 = event.target;
+  elem2 = elem2.querySelector('#deleteBtn')
+  
+  // let deleteBtn = document.getElementById('');
 
   if (type === "enter") {
     elem.classList.add("toggle");
+    elem2.classList.add('red');
   } else {
     elem.classList.remove("toggle");
+    elem2.classList.remove("red");
   }
 }
 
@@ -58,11 +65,13 @@ function deleteElem(event) {
 function createTask(inputVal) {
   
 
-  if (inputVal) {
+  if (inputVal.trim()) {
     inputVal = inputVal.toString();
     inputVal = inputVal.slice(0, 1).toUpperCase() + inputVal.slice(1);
     inputVal = inputVal.trim();
 
+  } else {
+    return;
   }
   let task = document.createElement("div");
   for (const key in attribute) {
@@ -90,10 +99,25 @@ function createTask(inputVal) {
 
 
 function editTaskVal(event) {
+  let taskP = event.target.parentElement
   let clss = event.target.parentElement;
+  document.querySelectorAll('#edit').forEach(el => el.classList.remove('dflex'));
   
   clss = clss.querySelector('#edit');
   clss.classList.add('dflex');
+
+  taskP = taskP.querySelector('#taskP').textContent;
+  console.log(taskP);
+  clss = clss.querySelector('#editVal');
+  clss.placeholder = taskP;
+  
+  clss.addEventListener('keydown', (key)=>{
+    
+    if (key.keyCode === 9) {
+      clss.value = taskP;
+    }
+    
+  })
   
 }
 
@@ -108,9 +132,15 @@ function updateTask(event){
 let task = event.target.parentElement;
 let editVal = task.querySelector('#editVal');
 
-let taskP = task.parentElement;
+
+let taskP = task.parentElement.querySelector('#taskP');
+editVal.value = taskP.innerText;
+
 if (editVal.value) {
-  taskP.querySelector('#taskP').textContent = editVal.value;
+   let updatedVal = editVal.value.toString();
+    updatedVal = updatedVal.slice(0, 1).toUpperCase() + updatedVal.slice(1);
+    updatedVal = updatedVal.trim();
+  taskP.querySelector('#taskP').textContent = updatedVal;
 dnoneEdit(event);
 editVal.placeholder = ''
 editVal.value = '';

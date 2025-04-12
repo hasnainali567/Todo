@@ -67,16 +67,17 @@ header > h2 {
 }
 
 main {
-    height: 483px;
+    /* height: 483px; */
+    flex-grow: 1;
   display: flex;
   flex-direction: column;
   /* background-color: #6ee7b7; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 15px;
 }
 
 #tasks {
-    height: 312px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -86,7 +87,7 @@ main {
 
 .task {
   position: relative !important;
-   min-height: 44px;
+  min-height: 44px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -104,16 +105,20 @@ main {
     color: transparent;
     background-color: transparent;
     transition: .2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
-}
-
-.toggle > i{
-    background-color: #8e49e8 !important;
-    color: white;
     cursor: pointer;
 }
 
-.toggle > i:last-child {
-    background-color: red !important;
+.toggle{
+    background-color: #8e49e8 !important;
+    color: white !important;
+}
+
+
+.red {
+  background-color: rgb(251, 23, 23) !important;
+  color: white !important;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
  
 .task > p {
@@ -121,7 +126,7 @@ main {
 }
 
 #tasksCount {
-    min-height: 59px;
+  min-height: 59px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,6 +134,8 @@ main {
   /* padding: 8px; */
   padding-top: 15px;
   font-size: 1.1rem;
+  gap: 10px;
+  
 }
 
 #tasksCount > button {
@@ -140,6 +147,7 @@ main {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 #edit {
@@ -166,7 +174,7 @@ main {
 
 
 #edit > button {
-  background-color: red;
+  background-color: rgb(254, 29, 29);
   color: white;
   font-size: 1rem;
   font-weight: 500;
@@ -182,4 +190,104 @@ main {
 
 .dflex {
   display: flex !important;
+}
+
+
+
+
+
+@media screen and (max-width : 460px) {
+.task {
+  min-height: 35px;
+  padding-left: 0px 10px;
+}
+
+.task > p{
+  font-size: 1.05rem;
+}
+
+.task > i {
+  font-size: 1.2rem;
+  padding-inline: 10px;
+}
+
+  body {
+    padding: 20px;
+  }
+
+  header > h2 {
+    font-size: 2rem;
+  }
+
+  #main {
+    min-width: 100%;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  main {
+    gap: 5px;
+  }
+
+  #edit{
+    width: 100%;
+  }
+
+ 
+  #edit > input {
+    width: 60%;
+    padding: 3px 6px;
+    font-size: .8rem;
+  }
+
+  #edit > button {
+    font-size: .8rem;
+    padding: 2px 3px;
+    width: 20%;
+  }
+  
+  #inputDisplay {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+  
+  #input > i{
+    font-size: 1.4rem;
+    padding: 8.5px 10.5px;
+  }
+
+  #countP{
+    font-size: .9rem;
+  }
+
+  #tasksCount > button {
+    font-size: .9rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+
+  header > h2 {
+    font-size: 1.8rem;
+  }
+  #edit {
+    flex-wrap: wrap;
+  }
+ 
+  #edit > input {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: .95rem;
+    border-right: 3px solid rgb(180, 180, 180);
+    border-bottom: none;
+  }
+
+  #edit > button {
+    font-size: .95rem;
+    padding: 5px 0px;
+    width: 50%;
+  }
 }
