@@ -77,7 +77,6 @@ function createTask(inputVal) {
   for (const key in attribute) {
     task.setAttribute(key, attribute[key]);
   }
-//   console.log(task);
 
   let taskP = document.createElement("p");
   taskP.setAttribute('id', 'taskP');
@@ -107,7 +106,6 @@ function editTaskVal(event) {
   clss.classList.add('dflex');
 
   taskP = taskP.querySelector('#taskP').textContent;
-  console.log(taskP);
   clss = clss.querySelector('#editVal');
   clss.placeholder = taskP;
   
@@ -134,13 +132,12 @@ let editVal = task.querySelector('#editVal');
 
 
 let taskP = task.parentElement.querySelector('#taskP');
-editVal.value = taskP.innerText;
 
 if (editVal.value) {
    let updatedVal = editVal.value.toString();
     updatedVal = updatedVal.slice(0, 1).toUpperCase() + updatedVal.slice(1);
     updatedVal = updatedVal.trim();
-  taskP.querySelector('#taskP').textContent = updatedVal;
+    taskP.textContent = updatedVal;
 dnoneEdit(event);
 editVal.placeholder = ''
 editVal.value = '';
