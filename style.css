@@ -46,7 +46,8 @@ header > h2 {
   padding: 8px;
   padding-inline: 12px;
   font-size: 1.3rem;
-  width: 80%;
+  
+  flex-grow: 1;
   border: 2px solid rgb(178, 178, 178);
   border-radius: 3px;
   outline: none;
@@ -263,6 +264,14 @@ main {
 
   #tasksCount > button {
     font-size: .9rem;
+  }
+
+  #inputDisply{
+    width: 87%;
+  }
+
+  #input > i {
+    width: 13%;
   }
 }
 
