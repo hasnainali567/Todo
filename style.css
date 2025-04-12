@@ -46,7 +46,7 @@ header > h2 {
   padding: 8px;
   padding-inline: 12px;
   font-size: 1.3rem;
-  flex-grow: 1;
+  width: calc(100% - (12.5px + 1.8rem);
   border: 2px solid rgb(178, 178, 178);
   border-radius: 3px;
   outline: none;
