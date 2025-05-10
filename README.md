@@ -5,7 +5,7 @@ Welcome to the **Todo App** – a sleek, simple, and interactive to-do list web 
 
 Whether you're a developer looking for a simple task manager or just someone in need of a to-do list, this app is a perfect starting point!
 
-🔗 Live Demo: [Todo App on GitHub Pages](https://hasnainali567.github.io/Todo/)
+🔗 Live Demo: [Todo App on GitHub Pages](https://dazzling-longma-4a3bec.netlify.app/)
 
 ---
 
