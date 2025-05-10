@@ -84,6 +84,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-bottom: 40px;
   overflow: auto;
   scrollbar-width: none;
 }
