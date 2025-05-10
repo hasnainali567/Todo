@@ -16,6 +16,20 @@ let attribute = {
   class: "task",
 };
 
+window.addEventListener('load', ()=>{
+  let tasksStored = localStorage.getItem('tasks');
+  tasksStored = JSON.parse(tasksStored);
+  let taskCount = JSON.parse(localStorage.getItem('tasksCount'));
+
+  console.log(taskCount);
+  
+  if (tasksStored) {
+    tasks.innerHTML = tasksStored;
+    countP.textContent = taskCount;
+  }
+  
+})
+
 addBtn.addEventListener("click",()=>{
     let inputVal = inputDisplay.value;
 
@@ -54,11 +68,12 @@ function clearAll() {
   tasks.innerHTML = "";
   countP.textContent = "You have 0 remaining tasks";
   inputDisplay.value = "";
+  localStorage.clear();
 }
 
 function deleteElem(event) {
   event.target.parentElement.remove();
-  let taskCount = tasks.querySelectorAll("div").length;
+  let taskCount = tasks.querySelectorAll(".task").length;
   countP.textContent = `You have ${taskCount} remaining tasks`;
 }
 
@@ -88,10 +103,20 @@ function createTask(inputVal) {
 
   if (inputVal) {
     tasks.appendChild(task);
-    let taskCount = tasks.querySelectorAll("div").length;
+    localStorage.clear();
+
+    localStorage.setItem('tasks', JSON.stringify(tasks.innerHTML));
+    
+    
+
+    let taskCount = tasks.querySelectorAll(".task").length;
 
     
+    
     countP.textContent = `You have ${taskCount} remaining tasks`;
+    localStorage.setItem('tasksCount', JSON.stringify(countP.textContent));
+    console.log(countP.textContent);
+    
     tasks.scrollTop = tasks.scrollHeight;
   }
 }
@@ -116,6 +141,7 @@ function editTaskVal(event) {
     }
     
   })
+  localStorage.setItem('tasks', JSON.stringify(tasks.innerHTML));
   
 }
 

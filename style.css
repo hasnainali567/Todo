@@ -11,12 +11,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* overflow: hidden; */
   background: linear-gradient(to bottom, #6ee7b7, #3b82f6);
 }
 
 #main {
   min-height: 550px;
   max-height: 550px;
+  height: 550px;
   min-width: 450px;
   background-color: white;
   padding: 20px;
@@ -24,6 +26,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  position: relative;
+  /* overflow: hidden; */
 }
 
 header > h2 {
@@ -34,7 +38,6 @@ header > h2 {
 }
 
 #input {
-    min-height: 50.4px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -67,10 +70,10 @@ header > h2 {
 }
 
 main {
-    /* height: 483px; */
-    flex-grow: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   /* background-color: #6ee7b7; */
   /* justify-content: space-between; */
   gap: 15px;
@@ -81,7 +84,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow: auto !important;
+  overflow: auto;
   scrollbar-width: none;
 }
 
@@ -126,13 +129,17 @@ main {
 }
 
 #tasksCount {
-  min-height: 59px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  padding-inline: 15px;
+  border-radius: 5px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  /* padding: 8px; */
-  padding-top: 15px;
   font-size: 1.1rem;
   gap: 10px;
   
